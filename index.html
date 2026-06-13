@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BAZUMI — премиум игрушки оптом</title>
+<meta name="description" content="BAZUMI — оптовые поставки премиальных детских игрушек. Конструкторы, роботы, машинки и развивающие игры.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF6F0;
+  --cream-2:#F4EBDC;
+  --blush:#F5DDD2;
+  --butter:#F5E5B5;
+  --sky:#CFE0E8;
+  --sage:#D4DDC9;
+  --lilac:#E2D5E8;
+  --peach:#F8D9C4;
+  --cherry:#C04A4A;
+  --ink:#3A2E2A;
+  --ink-soft:#7A6963;
+  --line:#E6DCCB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--cream);color:var(--ink);
+  font-size:15px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:var(--cherry);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:22px;font-style:italic}
+.logo-name{font-family:'DM Serif Display',serif;font-size:24px;line-height:1;letter-spacing:.04em}
+nav.cat-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.cat-nav a{font-size:13px;font-weight:500;color:var(--ink);padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--cream);transition:.2s;white-space:nowrap}
+nav.cat-nav a:hover{background:#6E1F2A;color:var(--cream);border-color:#6E1F2A}
+.cart-btn{display:flex;align-items:center;gap:10px;cursor:pointer;background:var(--ink);color:var(--cream);border:none;font-family:inherit;font-size:14px;font-weight:500;padding:10px 18px;border-radius:999px;transition:.2s;flex-shrink:0}
+.cart-btn:hover{background:var(--cherry)}
+.cart-btn .dot{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--butter);color:var(--ink);font-size:12px;font-weight:700}
+.menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+
+/* HERO */
+.hero{padding:72px 0 56px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(44px,6.5vw,80px);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--cherry)}
+.hero h1 .squig{display:inline-block;background:var(--butter);padding:0 12px;border-radius:14px;transform:rotate(-1deg)}
+.hero p.lead{margin-top:24px;font-size:17px;color:var(--ink-soft);max-width:520px}
+.hero .stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.hero .stat .n{font-family:'DM Serif Display',serif;font-size:36px;color:var(--cherry);line-height:1}
+.hero .stat .l{font-size:12px;color:var(--ink-soft);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+.hero .cta-row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn-pri{background:var(--cherry);color:var(--cream);border:none;padding:14px 26px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.btn-pri:hover{background:var(--ink)}
+.btn-sec{background:transparent;color:var(--ink);border:1.5px solid var(--ink);padding:14px 26px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.btn-sec:hover{background:var(--ink);color:var(--cream)}
+.hero-art{position:relative;height:440px}
+.hero-art .shape{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.hero-art .shape svg{width:48%;height:48%;color:var(--ink);opacity:.55}
+.hero-art .s1{width:240px;height:240px;background:var(--blush);top:10px;left:30px}
+.hero-art .s2{width:180px;height:180px;background:var(--sky);top:50px;right:30px}
+.hero-art .s3{width:160px;height:160px;background:var(--butter);bottom:20px;left:150px}
+.hero-art .star{position:absolute;font-family:'DM Serif Display',serif;color:var(--cherry);opacity:.7}
+.hero-art .star.x1{top:0;right:130px;font-size:28px;transform:rotate(-12deg)}
+.hero-art .star.x2{bottom:60px;right:50px;font-size:22px;transform:rotate(8deg)}
+.hero-art .star.x3{top:230px;left:0;font-size:18px;transform:rotate(-6deg)}
+
+/* CATEGORY GRID */
+.cat-block{padding:24px 0 72px}
+.cat-block .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+.cat-block .hd h2{font-family:'DM Serif Display',serif;font-size:36px;font-weight:400}
+.cat-block .hd p{color:var(--ink-soft);font-size:14px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat-grid a{border-radius:28px;padding:28px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s;color:var(--ink);gap:8px;border:2px solid rgba(58,46,42,.22)}
+.cat-grid a:hover{transform:translateY(-4px) rotate(-1deg)}
+.cat-grid a:nth-child(1){background:var(--blush)}
+.cat-grid a:nth-child(2){background:var(--butter)}
+.cat-grid a:nth-child(3){background:var(--sky)}
+.cat-grid a:nth-child(4){background:var(--sage)}
+.cat-grid a:nth-child(5){background:var(--lilac)}
+.cat-grid a:nth-child(6){background:var(--peach)}
+.cat-grid .icn{font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;color:var(--ink);opacity:.55}
+.cat-grid .nm{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;line-height:1.1}
+.cat-grid .ct{font-size:12px;font-weight:500;color:var(--ink);opacity:.7}
+.cat-grid .ar{font-size:13px;font-weight:600}
+
+/* PRODUCT SECTIONS */
+section.cat{padding:64px 0;scroll-margin-top:90px}
+section.cat:nth-of-type(even){background:var(--cream-2)}
+.cat-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px;flex-wrap:wrap;gap:12px}
+.cat-head h2{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400}
+.cat-head h2 em{font-style:italic;color:var(--cherry)}
+.cat-head .ct{font-size:13px;color:var(--ink-soft);background:var(--cream);padding:6px 14px;border-radius:999px;font-weight:500}
+.cat-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sort-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--cream)}
+.sort-btn{background:transparent;border:none;font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);padding:6px 14px;border-radius:999px;cursor:pointer;transition:.15s;font-weight:500;white-space:nowrap}
+.sort-btn:hover{color:var(--ink)}
+.sort-btn.is-active{background:var(--ink);color:var(--cream)}
+
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--cream);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;border:2px solid rgba(58,46,42,.18);box-shadow:0 3px 10px rgba(58,46,42,.06)}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(58,46,42,.14);border-color:rgba(58,46,42,.4)}
+.card .img{aspect-ratio:3/4;background:#fff;position:relative;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.card:hover .img img{transform:scale(1.04)}
+.card .img .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;background:var(--cream-2)}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .name{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:1.35;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:3.6em}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;gap:10px}
+.card .price{flex:1;text-align:left;padding-left:6px;font-family:'Inter',sans-serif;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.card .price.muted{font-family:'DM Serif Display',serif;font-size:15px;color:var(--ink-soft);font-style:italic;font-weight:400;letter-spacing:0}
+.card .add{background:var(--ink);color:var(--cream);border:none;padding:9px 14px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;transition:.2s;white-space:nowrap}
+.card .add:hover{background:var(--cherry)}
+.card .add.ok{background:var(--sage);color:var(--ink)}
+
+/* LOAD MORE */
+.more-wrap{display:flex;justify-content:center;margin-top:32px}
+.more-btn{background:transparent;color:var(--ink);border:1.5px solid var(--ink);padding:14px 32px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.more-btn:hover{background:var(--ink);color:var(--cream)}
+
+/* FOOTER */
+footer{margin-top:80px;padding:56px 0 36px;border-top:1px solid var(--line);text-align:center}
+footer .lg{font-family:'DM Serif Display',serif;font-size:32px;letter-spacing:.04em}
+footer .info{color:var(--ink-soft);margin-top:14px;font-size:14px}
+footer .tg{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;margin-top:18px;font-size:14px;font-weight:500}
+
+/* CART */
+.cart-panel{position:fixed;top:0;right:0;height:100vh;width:min(460px,100%);background:var(--cream);border-left:1px solid var(--line);transform:translateX(110%);transition:transform .35s ease;z-index:100;display:flex;flex-direction:column;border-radius:24px 0 0 24px}
+.cart-panel.open{transform:translateX(0)}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border-bottom:1px solid var(--line)}
+.cart-head h3{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400}
+.cart-head button{background:var(--cream-2);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--ink)}
+.cart-note{padding:14px 28px;background:var(--butter);font-size:12px;color:var(--ink);line-height:1.4}
+.cart-items{flex:1;overflow-y:auto;padding:8px 0}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 28px;border-bottom:1px solid var(--line)}
+.cart-item .thumb{width:64px;height:64px;background:#fff;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cart-item .thumb img{width:100%;height:100%;object-fit:contain;padding:4px}
+.cart-item .nm{font-size:13px;line-height:1.3;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cart-item .wb{font-size:11px;color:var(--ink-soft);margin-top:3px}
+.cart-item .qty{display:flex;align-items:center;gap:6px}
+.cart-item .qbtn{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--cream);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.cart-item .qn{font-weight:600;min-width:18px;text-align:center;font-size:13px}
+.cart-item .rm{background:none;border:none;color:var(--cherry);cursor:pointer;font-size:11px;font-weight:600;margin-left:8px}
+.cart-foot{padding:24px 28px;border-top:1px solid var(--line)}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-size:14px}
+.cart-total span:first-child{color:var(--ink-soft)}
+.cart-total span:last-child{font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink)}
+.cart-go{display:block;width:100%;background:var(--cherry);color:var(--cream);border:none;padding:16px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.cart-go:hover{background:var(--ink)}
+.cart-empty{padding:48px 28px;text-align:center;color:var(--ink-soft);font-size:14px}
+.backdrop{position:fixed;inset:0;background:rgba(58,46,42,.4);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+.backdrop.show{opacity:1;pointer-events:all}
+
+/* RESPONSIVE */
+@media (max-width:1080px){
+  .products{grid-template-columns:repeat(3,1fr)}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .menu-toggle{display:block}
+  nav.cat-nav{position:absolute;top:76px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line);transform:translateY(-10px);opacity:0;pointer-events:none;transition:.2s}
+  nav.cat-nav.open{transform:translateY(0);opacity:1;pointer-events:all}
+  nav.cat-nav a{padding:14px 28px;border-radius:0;font-size:15px}
+  .hero{padding:48px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-art{height:300px;margin-top:8px}
+  .hero-art .s1{width:170px;height:170px;top:10px;left:20px}
+  .hero-art .s2{width:130px;height:130px;top:30px;right:20px}
+  .hero-art .s3{width:120px;height:120px;bottom:0;left:auto;right:80px}
+  .hero-art .star.x1{right:90px;font-size:22px}
+  .hero-art .star.x2{bottom:30px;right:20px;font-size:18px}
+  .hero-art .star.x3{display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .products{grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat-head h2{font-size:30px}
+  .card .name{font-size:13px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .cat-grid{grid-template-columns:1fr}
+  .products{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cart-btn{padding:10px 14px}
+  .cart-btn span:not(.dot){display:none}
+  .card .body{padding:12px}
+  .card .add{padding:8px 12px;font-size:11px}
+  .card .price{font-size:12px}
+  .cat-head h2{font-size:26px}
+  .hero .stats{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <span class="logo-mark">B</span>
+      <span class="logo-name">BAZUMI</span>
+    </a>
+    <button class="menu-toggle" id="menuBtn">≡</button>
+    <nav class="cat-nav" id="catNav">
+      <a href="#edu">Развивающие</a>
+      <a href="#constructors">Конструкторы</a>
+      <a href="#weapons">Оружие</a>
+      <a href="#baby">Для малышей</a>
+      <a href="#vehicles">Машинки</a>
+      <a href="#robots">Роботы</a>
+    </nav>
+    <button class="cart-btn" id="openCart"><span>Корзина</span><span class="dot" id="dot">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Премиальные<br>игрушки <em>оптом</em><br><span class="squig">для вашего магазина</span></h1>
+        <p class="lead">BAZUMI — оптовые поставки детских игрушек: конструкторы, роботы-трансформеры, машинки и развивающие наборы. Прямые отгрузки, гибкие цены, более 300 позиций.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">300+</div><div class="l">позиций</div></div>
+          <div class="stat"><div class="n">6</div><div class="l">категорий</div></div>
+          <div class="stat"><div class="n">1ч</div><div class="l">ответ менеджера</div></div>
+        </div>
+        <div class="cta-row">
+          <button class="btn-pri" onclick="document.getElementById('cats').scrollIntoView({behavior:'smooth'})">Смотреть каталог</button>
+          <button class="btn-sec" onclick="document.getElementById('openCart').click()">Открыть корзину</button>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="star x1">✦</span>
+        <span class="star x2">✦</span>
+        <span class="star x3">✦</span>
+        <div class="shape s1"><svg viewBox="0 0 64 64" fill="currentColor"><circle cx="20" cy="20" r="8"/><circle cx="44" cy="20" r="8"/><circle cx="32" cy="38" r="20"/></svg></div>
+        <div class="shape s2"><svg viewBox="0 0 64 64" fill="currentColor"><rect x="8" y="44" width="48" height="8" rx="4"/><rect x="14" y="32" width="36" height="8" rx="4"/><rect x="20" y="20" width="24" height="8" rx="4"/><rect x="26" y="8" width="12" height="8" rx="4"/></svg></div>
+        <div class="shape s3"><svg viewBox="0 0 64 64" fill="currentColor"><rect x="22" y="8" width="20" height="14" rx="3"/><rect x="16" y="24" width="32" height="22" rx="4"/><rect x="20" y="48" width="8" height="10" rx="2"/><rect x="36" y="48" width="8" height="10" rx="2"/><circle cx="26" cy="34" r="3" fill="#FBF6F0"/><circle cx="38" cy="34" r="3" fill="#FBF6F0"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap cat-block" id="cats">
+    <div class="hd"><h2>Каталог по категориям</h2><p>нажмите на категорию, чтобы перейти к товарам</p></div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+
+  <section id="all" class="cat"><div class="wrap"><div class="cat-head"><h2>Все <em>игрушки</em></h2><div class="cat-tools"><div class="ct" id="cnt-all"></div><div class="sort-toggle" data-cat="all"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-all"></div></div></section>
+
+  <section id="edu" class="cat"><div class="wrap"><div class="cat-head"><h2><em>Развивающие</em> и активные</h2><div class="cat-tools"><div class="ct" id="cnt-edu"></div><div class="sort-toggle" data-cat="edu"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-edu"></div><div class="more-wrap" id="more-wrap-edu"></div></div></section>
+  <section id="constructors" class="cat"><div class="wrap"><div class="cat-head"><h2>Конструкторы</h2><div class="cat-tools"><div class="ct" id="cnt-constructors"></div><div class="sort-toggle" data-cat="constructors"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-constructors"></div><div class="more-wrap" id="more-wrap-constructors"></div></div></section>
+  <section id="weapons" class="cat"><div class="wrap"><div class="cat-head"><h2>Игрушечное <em>оружие</em></h2><div class="cat-tools"><div class="ct" id="cnt-weapons"></div><div class="sort-toggle" data-cat="weapons"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-weapons"></div><div class="more-wrap" id="more-wrap-weapons"></div></div></section>
+  <section id="baby" class="cat"><div class="wrap"><div class="cat-head"><h2>Для <em>малышей</em></h2><div class="cat-tools"><div class="ct" id="cnt-baby"></div><div class="sort-toggle" data-cat="baby"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-baby"></div><div class="more-wrap" id="more-wrap-baby"></div></div></section>
+  <section id="vehicles" class="cat"><div class="wrap"><div class="cat-head"><h2>Машинки и <em>транспорт</em></h2><div class="cat-tools"><div class="ct" id="cnt-vehicles"></div><div class="sort-toggle" data-cat="vehicles"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-vehicles"></div><div class="more-wrap" id="more-wrap-vehicles"></div></div></section>
+  <section id="robots" class="cat"><div class="wrap"><div class="cat-head"><h2>Роботы и <em>трансформеры</em></h2><div class="cat-tools"><div class="ct" id="cnt-robots"></div><div class="sort-toggle" data-cat="robots"><button class="sort-btn is-active" data-sort="popular">по популярности</button><button class="sort-btn" data-sort="price">по цене</button></div></div></div><div class="products" id="grid-robots"></div><div class="more-wrap" id="more-wrap-robots"></div></div></section>
+</main>
+
+<footer>
+  <div class="lg">BAZUMI</div>
+  <div class="info">оптовые поставки детских игрушек · работаем с ИП и юр. лицами</div>
+  <a href="#" class="tg" id="footTg">✦ Написать в Telegram</a>
+</footer>
+
+<div class="backdrop" id="bd"></div>
+<aside class="cart-panel" id="cart">
+  <div class="cart-head"><h3>Корзина</h3><button id="closeCart">✕</button></div>
+  <div class="cart-note" id="cartNote">Указаны цены за штуку. Менеджер уточнит наличие и финальный счёт в Telegram.</div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Итого</span><span id="total">0,0 р.</span></div>
+    <button class="cart-go" id="checkout">Оформить заявку в Telegram</button>
+  </div>
+</aside>
+
+<script>
+const products = {
+  edu: [
+    {id:'p784073384',wb:'784073384',name:'Жилетка с липучками и мячиками вышибалы',photo:'https://basket-36.wbbasket.ru/vol7840/part784073/784073384/images/big/1.webp'},
+    {id:'p784070994',wb:'784070994',name:'Набор игра бадминтон с перчатками и мягкими воланчиками',photo:'https://basket-36.wbbasket.ru/vol7840/part784070/784070994/images/big/1.webp',price:13.3},
+    {id:'p785885994',wb:'785885994',name:'Складные ворота для футбола переносные с чехлом',photo:'https://basket-36.wbbasket.ru/vol7858/part785885/785885994/images/big/1.webp',price:26.9},
+    {id:'p788522562',wb:'788522562',name:'Настольная игра футбол вышибалы боулинг 6 в 1',photo:'https://basket-36.wbbasket.ru/vol7885/part788522/788522562/images/big/1.webp'},
+    {id:'p788538793',wb:'788538793',name:'Ракетки для бадминтона с мягкими мячиками и воланчиками',photo:'https://basket-36.wbbasket.ru/vol7885/part788538/788538793/images/big/1.webp'},
+    {id:'p788538794',wb:'788538794',name:'Набор для бадминтона детский ракетки с мягкими мячиками',photo:'https://basket-36.wbbasket.ru/vol7885/part788538/788538794/images/big/1.webp'},
+    {id:'p411186575',wb:'411186575',name:'Интерактивная кошка игрушка мяукает повторяет для девочки',photo:'https://basket-23.wbbasket.ru/vol4111/part411186/411186575/images/big/1.webp',price:76.3},
+    {id:'p697259046',wb:'697259046',name:'Кухня детская раковина с водой и рыбалкой на батарейках',photo:'https://basket-33.wbbasket.ru/vol6972/part697259/697259046/images/big/1.webp',price:36.7},
+    {id:'p814554535',wb:'814554535',name:'Танцующий осьминог игрушка интерактивная музыкальная',photo:'https://basket-37.wbbasket.ru/vol8145/part814554/814554535/images/big/1.webp',price:18.5},
+    {id:'p890330650',wb:'890330650',name:'Руль подвесной музыкальный для малыша в машину с зеркалом',photo:'https://basket-39.wbbasket.ru/vol8903/part890330/890330650/images/big/1.webp'},
+    {id:'p890344840',wb:'890344840',name:'Ракета лунная станция с астронавтами и шуруповертом',photo:'https://basket-39.wbbasket.ru/vol8903/part890344/890344840/images/big/1.webp'},
+    {id:'p411199026',wb:'411199026',name:'Диапроектор фонарик детский с картинками на батарейках',photo:'https://basket-23.wbbasket.ru/vol4111/part411199/411199026/images/big/1.webp',price:8.7},
+    {id:'p496421739',wb:'496421739',name:'Набор доктора с микроскопом и куклой для девочки',photo:'https://basket-27.wbbasket.ru/vol4964/part496421/496421739/images/big/1.webp',price:54.0},
+    {id:'p526212185',wb:'526212185',name:'Плакат интерактивный детский с животными говорящий',photo:'https://basket-28.wbbasket.ru/vol5262/part526212/526212185/images/big/1.webp',price:18.1},
+    {id:'p334593676',wb:'334593676',name:'Говорящая книга для малышей с русским алфавитом и сказками',photo:'https://basket-20.wbbasket.ru/vol3345/part334593/334593676/images/big/1.webp',price:24.3},
+    {id:'p411180653',wb:'411180653',name:'Ксилофон пианино детский для малышей',photo:'https://basket-23.wbbasket.ru/vol4111/part411180/411180653/images/big/1.webp',price:22.3},
+    {id:'p207077279',wb:'207077279',name:'Пианино детское с микрофоном запись песен караоке',photo:'https://basket-14.wbbasket.ru/vol2070/part207077/207077279/images/big/1.webp',price:47.7},
+    {id:'p207081334',wb:'207081334',name:'Интерактивная игрушка собака умный щенок на батарейках',photo:'https://basket-14.wbbasket.ru/vol2070/part207081/207081334/images/big/1.webp'},
+    {id:'p207081335',wb:'207081335',name:'Интерактивная игрушка собака умный щенок на батарейках',photo:'https://basket-14.wbbasket.ru/vol2070/part207081/207081335/images/big/1.webp'},
+    {id:'p160485380',wb:'160485380',name:'Интерактивный бегающий музыкальный краб для малышей',photo:'https://basket-11.wbbasket.ru/vol1604/part160485/160485380/images/big/1.webp'},
+    {id:'p160482833',wb:'160482833',name:'Мини проектор детский для рисования с фломастерами раскраска',photo:'https://basket-11.wbbasket.ru/vol1604/part160482/160482833/images/big/1.webp'},
+    {id:'p160483951',wb:'160483951',name:'Синтезатор детский пианино музыкальное развивающая игрушка',photo:'https://basket-11.wbbasket.ru/vol1604/part160483/160483951/images/big/1.webp',price:28.3},
+    {id:'p366637479',wb:'366637479',name:'Набор игра поймай мяч дартс на липучках',photo:'https://basket-21.wbbasket.ru/vol3666/part366637/366637479/images/big/1.webp',price:7.3},
+    {id:'p371972747',wb:'371972747',name:'Настольный футбол с аэрохоккеем деревянный большой',photo:'https://basket-22.wbbasket.ru/vol3719/part371972/371972747/images/big/1.webp',price:50.6},
+    {id:'p489544548',wb:'489544548',name:'Настольная игра для двоих детский динобой с динозаврами',photo:'https://basket-27.wbbasket.ru/vol4895/part489544/489544548/images/big/1.webp'},
+    {id:'p150611004',wb:'150611004',name:'Развивающий настольный футбол складной для детей большой',photo:'https://basket-10.wbbasket.ru/vol1506/part150611/150611004/images/big/1.webp',price:37.5},
+    {id:'p160989316',wb:'160989316',name:'Развивающие игрушки кухня детская рыбалка на батарейках',photo:'https://basket-11.wbbasket.ru/vol1609/part160989/160989316/images/big/1.webp',price:15.2},
+    {id:'p160989317',wb:'160989317',name:'Кухня детская кран с водой и рыбалкой на батарейках',photo:'https://basket-11.wbbasket.ru/vol1609/part160989/160989317/images/big/1.webp'},
+    {id:'p207076751',wb:'207076751',name:'Музыкальный интерактивный игрушечный руль с музыкой',photo:'https://basket-14.wbbasket.ru/vol2070/part207076/207076751/images/big/1.webp',price:17.8},
+    {id:'p16471974',wb:'16471974',name:'Набор для лепки детский Динозавры с пластилином мягкий',photo:'https://basket-02.wbbasket.ru/vol164/part16471/16471974/images/big/1.webp'},
+    {id:'p16996621',wb:'16996621',name:'Краб музыкальный',photo:'https://basket-02.wbbasket.ru/vol169/part16996/16996621/images/big/1.webp'},
+  ],
+  constructors: [
+    {id:'p415775006',wb:'415775006',name:'Конструктор магнитный minecraft кубики майнкрафт',photo:'https://basket-24.wbbasket.ru/vol4157/part415775/415775006/images/big/1.webp'},
+    {id:'p415775009',wb:'415775009',name:'Магнитный конструктор майнкрафт кубики minecraft lego',photo:'https://basket-24.wbbasket.ru/vol4157/part415775/415775009/images/big/1.webp',price:9.6},
+    {id:'p415775010',wb:'415775010',name:'Конструктор магнитный майнкрафт кубики minecraft lego',photo:'https://basket-24.wbbasket.ru/vol4157/part415775/415775010/images/big/1.webp',price:43.2},
+    {id:'p499510299',wb:'499510299',name:'Конструктор майнкрафт 128 магнитных детали',photo:'https://basket-27.wbbasket.ru/vol4995/part499510/499510299/images/big/1.webp'},
+    {id:'p499510558',wb:'499510558',name:'Конструктор пещера майнкрафт 143 магнитных кубика',photo:'https://basket-27.wbbasket.ru/vol4995/part499510/499510558/images/big/1.webp',price:32.7},
+    {id:'p499512074',wb:'499512074',name:'Конструктор магнитный майнкрафт кубики 384 элемента',photo:'https://basket-27.wbbasket.ru/vol4995/part499512/499512074/images/big/1.webp',price:86.5},
+    {id:'p758113090',wb:'758113090',name:'Конструктор магнитный майнкрафт кубики портал 186 деталей',photo:'https://basket-35.wbbasket.ru/vol7581/part758113/758113090/images/big/1.webp'},
+    {id:'p758113091',wb:'758113091',name:'Конструктор магнитный майнкрафт кубики 268 деталей',photo:'https://basket-35.wbbasket.ru/vol7581/part758113/758113091/images/big/1.webp'},
+    {id:'p758113092',wb:'758113092',name:'Конструктор магнитный майнкрафт кубики 132 детали',photo:'https://basket-35.wbbasket.ru/vol7581/part758113/758113092/images/big/1.webp'},
+    {id:'p16062287',wb:'16062287',name:'Развивающий конструктор для мальчиков аналог ЛЕГО',photo:'https://basket-02.wbbasket.ru/vol160/part16062/16062287/images/big/1.webp',price:62.2},
+    {id:'p70297358',wb:'70297358',name:'Конструктор для мальчиков полицейский участок аналог лего',photo:'https://basket-04.wbbasket.ru/vol702/part70297/70297358/images/big/1.webp',price:57.4},
+    {id:'p70297359',wb:'70297359',name:'Конструктор для мальчиков полицейский автопоезд Аналог',photo:'https://basket-04.wbbasket.ru/vol702/part70297/70297359/images/big/1.webp',price:39.3},
+    {id:'p16471971',wb:'16471971',name:'Конструктор морская полицейская база аналог лего',photo:'https://basket-02.wbbasket.ru/vol164/part16471/16471971/images/big/1.webp',price:30.8},
+    {id:'p16753662',wb:'16753662',name:'Конструктор детский полицейская станция блокпост Аналог',photo:'https://basket-02.wbbasket.ru/vol167/part16753/16753662/images/big/1.webp',price:12.9},
+    {id:'p783983461',wb:'783983461',name:'Конструктор для девочек с подсветкой цветочный замок',photo:'https://basket-36.wbbasket.ru/vol7839/part783983/783983461/images/big/1.webp'},
+    {id:'p783983462',wb:'783983462',name:'Конструктор лего Мегалодон и динозавр морской корабль',photo:'https://basket-36.wbbasket.ru/vol7839/part783983/783983462/images/big/1.webp'},
+    {id:'p371976559',wb:'371976559',name:'Конструктор ночник мастерская с танком и фигурками',photo:'https://basket-22.wbbasket.ru/vol3719/part371976/371976559/images/big/1.webp',price:75.6},
+    {id:'p712214311',wb:'712214311',name:'Конструктор магнитный Полицейский участок 49 деталей',photo:'https://basket-34.wbbasket.ru/vol7122/part712214/712214311/images/big/1.webp',price:40.9},
+    {id:'p712214312',wb:'712214312',name:'Конструктор магнитный Полицейский участок с машинками',photo:'https://basket-34.wbbasket.ru/vol7122/part712214/712214312/images/big/1.webp',price:84.7},
+    {id:'p712214313',wb:'712214313',name:'Конструктор магнитный светящийся лабиринт 120 деталей',photo:'https://basket-34.wbbasket.ru/vol7122/part712214/712214313/images/big/1.webp',price:81.6},
+    {id:'p371989529',wb:'371989529',name:'Пластина 2 шт для конструктора Lego серая',photo:'https://basket-22.wbbasket.ru/vol3719/part371989/371989529/images/big/1.webp'},
+    {id:'p371989531',wb:'371989531',name:'Пластина 2 шт для конструктора Lego зеленая',photo:'https://basket-22.wbbasket.ru/vol3719/part371989/371989531/images/big/1.webp'},
+    {id:'p371989534',wb:'371989534',name:'Пластина для конструктора Lego желтая',photo:'https://basket-22.wbbasket.ru/vol3719/part371989/371989534/images/big/1.webp'},
+    {id:'p499509762',wb:'499509762',name:'Фигурки лего майнкрафт 40 шт в большом наборе',photo:'https://basket-27.wbbasket.ru/vol4995/part499509/499509762/images/big/1.webp',price:11.9},
+    {id:'p534373656',wb:'534373656',name:'Конструктор для девочек домик на дереве',photo:'https://basket-28.wbbasket.ru/vol5343/part534373/534373656/images/big/1.webp',price:27.6},
+    {id:'p695404626',wb:'695404626',name:'Конструктор военный дирижабль на подставке',photo:'https://basket-33.wbbasket.ru/vol6954/part695404/695404626/images/big/1.webp',price:54.1},
+    {id:'p697255106',wb:'697255106',name:'Конструктор военная база штаб фигурки аналог LEGO',photo:'https://basket-33.wbbasket.ru/vol6972/part697255/697255106/images/big/1.webp'},
+    {id:'p712201638',wb:'712201638',name:'Конструктор военные фигурки солдатики СССР с оружием',photo:'https://basket-34.wbbasket.ru/vol7122/part712201/712201638/images/big/1.webp',price:19.0},
+    {id:'p371975475',wb:'371975475',name:'Конструктор набор военных машинок с фигурками и оружием',photo:'https://basket-22.wbbasket.ru/vol3719/part371975/371975475/images/big/1.webp',price:8.3},
+    {id:'p371977217',wb:'371977217',name:'Конструктор для мальчиков динозавры с машинками',photo:'https://basket-22.wbbasket.ru/vol3719/part371977/371977217/images/big/1.webp',price:29.1},
+    {id:'p207083047',wb:'207083047',name:'Конструктор набор военной техники танки Аналог LEGO',photo:'https://basket-14.wbbasket.ru/vol2070/part207083/207083047/images/big/1.webp',price:35.9},
+    {id:'p156205418',wb:'156205418',name:'Конструктор военная база спецназ фигурки аналог LEGO',photo:'https://basket-10.wbbasket.ru/vol1562/part156205/156205418/images/big/1.webp',price:74.3},
+    {id:'p140129555',wb:'140129555',name:'Большой набор 8 военных танков с 8 фигурками аналог LEGO',photo:'https://basket-10.wbbasket.ru/vol1401/part140129/140129555/images/big/1.webp',price:39.7},
+    {id:'p150603071',wb:'150603071',name:'Конструктор для мальчиков пожарная станция Аналог ЛЕГО',photo:'https://basket-10.wbbasket.ru/vol1506/part150603/150603071/images/big/1.webp',price:22.0},
+    {id:'p155202025',wb:'155202025',name:'Конструктор для мальчиков полиция с грабителями Аналог LEGO',photo:'https://basket-10.wbbasket.ru/vol1552/part155202/155202025/images/big/1.webp'},
+    {id:'p415722041',wb:'415722041',name:'Конструктор большие детали магнитный для малышей',photo:'https://basket-24.wbbasket.ru/vol4157/part415722/415722041/images/big/1.webp'},
+    {id:'p415722042',wb:'415722042',name:'Конструктор магнитный крупный для малышей в контейнере',photo:'https://basket-24.wbbasket.ru/vol4157/part415722/415722042/images/big/1.webp'},
+    {id:'p173127865',wb:'173127865',name:'Конструктор военные фигурки солдатики с оружием аналог',photo:'https://basket-12.wbbasket.ru/vol1731/part173127/173127865/images/big/1.webp',price:22.4},
+    {id:'p173129768',wb:'173129768',name:'Человечки SWAT минифигурки солдатики 24 с оружием аналог',photo:'https://basket-12.wbbasket.ru/vol1731/part173129/173129768/images/big/1.webp',price:18.9},
+    {id:'p240144769',wb:'240144769',name:'Конструктор зомби против растений Lego Аналог',photo:'https://basket-15.wbbasket.ru/vol2401/part240144/240144769/images/big/1.webp'},
+    {id:'p221724457',wb:'221724457',name:'Военный конструктор танк т44 аналог LEGO',photo:'https://basket-15.wbbasket.ru/vol2217/part221724/221724457/images/big/1.webp',price:40.3},
+    {id:'p207083544',wb:'207083544',name:'Конструктор набор гоночных машинок аналог лего',photo:'https://basket-14.wbbasket.ru/vol2070/part207083/207083544/images/big/1.webp',price:28.7},
+    {id:'p58280757',wb:'58280757',name:'Конструктор для мальчиков полицейская машина swat',photo:'https://basket-04.wbbasket.ru/vol582/part58280/58280757/images/big/1.webp',price:33.6},
+    {id:'p58282409',wb:'58282409',name:'Конструктор для мальчиков пожарная машина Аналог лего',photo:'https://basket-04.wbbasket.ru/vol582/part58282/58282409/images/big/1.webp',price:19.1},
+    {id:'p66896745',wb:'66896745',name:'Военный конструктор танк т34 развивающий подарочный аналог',photo:'https://basket-04.wbbasket.ru/vol668/part66896/66896745/images/big/1.webp',price:28.5},
+    {id:'p411184264',wb:'411184264',name:'Конструктор сборный лего модель военного вертолета',photo:'https://basket-23.wbbasket.ru/vol4111/part411184/411184264/images/big/1.webp'},
+    {id:'p411184265',wb:'411184265',name:'Конструктор модель сборный лего военный самолет',photo:'https://basket-23.wbbasket.ru/vol4111/part411184/411184265/images/big/1.webp'},
+    {id:'p411184268',wb:'411184268',name:'Сборный конструктор танк лего модель',photo:'https://basket-23.wbbasket.ru/vol4111/part411184/411184268/images/big/1.webp'},
+    {id:'p411176831',wb:'411176831',name:'Конструктор большой полицейский участок с машинкой лего',photo:'https://basket-23.wbbasket.ru/vol4111/part411176/411176831/images/big/1.webp'},
+    {id:'p411177778',wb:'411177778',name:'Большой конструктор военная полиция для мальчика робот',photo:'https://basket-23.wbbasket.ru/vol4111/part411177/411177778/images/big/1.webp',price:33.5},
+  ],
+  weapons: [
+    {id:'p785850522',wb:'785850522',name:'Игрушечный водный пистолет с мыльными пузырями аккумулятор',photo:'https://basket-36.wbbasket.ru/vol7858/part785850/785850522/images/big/1.webp',price:29.9},
+    {id:'p785874431',wb:'785874431',name:'Игрушечная мишень тир автоматическая со счетчиком',photo:'https://basket-36.wbbasket.ru/vol7858/part785874/785874431/images/big/1.webp'},
+    {id:'p784072367',wb:'784072367',name:'Водяные пистолеты бластеры большие в наборе 3шт',photo:'https://basket-36.wbbasket.ru/vol7840/part784072/784072367/images/big/1.webp',price:27.8},
+    {id:'p758185521',wb:'758185521',name:'Генератор мыльных пузырей с музыкой и светом для малышей',photo:'https://basket-35.wbbasket.ru/vol7581/part758185/758185521/images/big/1.webp'},
+    {id:'p721182263',wb:'721182263',name:'Водяной электрический пистолет бластер с рюкзаком',photo:'https://basket-34.wbbasket.ru/vol7211/part721182/721182263/images/big/1.webp',price:24.6},
+    {id:'p721182264',wb:'721182264',name:'Водный электрический пистолет автомат бластер с рюкзаком',photo:'https://basket-34.wbbasket.ru/vol7211/part721182/721182264/images/big/1.webp',price:24.6},
+    {id:'p677118970',wb:'677118970',name:'Автомат игрушечный с лазером и звуком вибрирующий',photo:'https://basket-33.wbbasket.ru/vol6771/part677118/677118970/images/big/1.webp',price:10.6},
+    {id:'p712216156',wb:'712216156',name:'Водяной автомат с орбизами и мягкими пулями 3в1',photo:'https://basket-34.wbbasket.ru/vol7122/part712216/712216156/images/big/1.webp',price:38.8},
+    {id:'p371982284',wb:'371982284',name:'Лазерный магнитный детский разборный автомат с мишенью',photo:'https://basket-22.wbbasket.ru/vol3719/part371982/371982284/images/big/1.webp',price:52.8},
+    {id:'p81335880',wb:'81335880',name:'Большой детский водный пистолет бластер с водяной помпой',photo:'https://basket-05.wbbasket.ru/vol813/part81335/81335880/images/big/1.webp'},
+    {id:'p150606046',wb:'150606046',name:'Электрический пистолет с орбизами на аккумуляторе глок',photo:'https://basket-10.wbbasket.ru/vol1506/part150606/150606046/images/big/1.webp',price:34.5},
+    {id:'p202827020',wb:'202827020',name:'Орбизы orbeez гидрогелевые шарики 7-8 мм',photo:'https://basket-13.wbbasket.ru/vol2028/part202827/202827020/images/big/1.webp',price:3.4},
+    {id:'p200773929',wb:'200773929',name:'Водяной пистолет бластер маленький набор брызгалка',photo:'https://basket-13.wbbasket.ru/vol2007/part200773/200773929/images/big/1.webp'},
+    {id:'p200775006',wb:'200775006',name:'Большой детский водный пистолет бластер с водяной помпой',photo:'https://basket-13.wbbasket.ru/vol2007/part200775/200775006/images/big/1.webp',price:9.5},
+    {id:'p200775812',wb:'200775812',name:'Водяной пистолет бластер с помпой и рюкзаком',photo:'https://basket-13.wbbasket.ru/vol2007/part200775/200775812/images/big/1.webp',price:16.4},
+    {id:'p526216833',wb:'526216833',name:'Лазерный меч джедая светящийся на аккумуляторе складной',photo:'https://basket-28.wbbasket.ru/vol5262/part526216/526216833/images/big/1.webp',price:10.0},
+    {id:'p783977688',wb:'783977688',name:'Игрушечный автомат с маской Оптимуса Прайма и патронами',photo:'https://basket-36.wbbasket.ru/vol7839/part783977/783977688/images/big/1.webp',price:14.6},
+    {id:'p783977689',wb:'783977689',name:'Игрушечный автомат с маской Бамблби и патронами',photo:'https://basket-36.wbbasket.ru/vol7839/part783977/783977689/images/big/1.webp',price:14.6},
+    {id:'p160493280',wb:'160493280',name:'Пистолет с мягкими пулями и маской нерф бамблби',photo:'https://basket-11.wbbasket.ru/vol1604/part160493/160493280/images/big/1.webp',price:25.3},
+    {id:'p216982636',wb:'216982636',name:'Игрушечная выдвижная телескопическая катана меч с фиксатором',photo:'https://basket-14.wbbasket.ru/vol2169/part216982/216982636/images/big/1.webp',price:7.0},
+    {id:'p237506535',wb:'237506535',name:'Пистолет для мыльных пузырей на батарейках',photo:'https://basket-15.wbbasket.ru/vol2375/part237506/237506535/images/big/1.webp'},
+    {id:'p239904692',wb:'239904692',name:'Антистресс игрушка пистолет гравитационный нож для детей',photo:'https://basket-15.wbbasket.ru/vol2399/part239904/239904692/images/big/1.webp',price:8.8},
+    {id:'p239905190',wb:'239905190',name:'Пистолет антистресс гравитационный нож 3D игрушечный',photo:'https://basket-15.wbbasket.ru/vol2399/part239905/239905190/images/big/1.webp',price:8.4},
+    {id:'p310898888',wb:'310898888',name:'Набор гравитационных ножей 3D игрушечный антистресс',photo:'https://basket-19.wbbasket.ru/vol3108/part310898/310898888/images/big/1.webp'},
+    {id:'p366634451',wb:'366634451',name:'Мини пистолет водяной для детей 4 шт',photo:'https://basket-21.wbbasket.ru/vol3666/part366634/366634451/images/big/1.webp'},
+  ],
+  baby: [
+    {id:'p756161528',wb:'756161528',name:'Набор для уборки, пылесос, стиральная машина и утюг',photo:'https://basket-35.wbbasket.ru/vol7561/part756161/756161528/images/big/1.webp',price:52.9},
+    {id:'p756161529',wb:'756161529',name:'Игровая кухня детская плита, микроволновка и мультиварка',photo:'https://basket-35.wbbasket.ru/vol7561/part756161/756161529/images/big/1.webp',price:59.1},
+    {id:'p784082522',wb:'784082522',name:'Каталка на палке крабик развивающая игрушка для малышей',photo:'https://basket-36.wbbasket.ru/vol7840/part784082/784082522/images/big/1.webp'},
+    {id:'p784082523',wb:'784082523',name:'Каталка детская на палочке вертолет с пропеллером и звуком',photo:'https://basket-36.wbbasket.ru/vol7840/part784082/784082523/images/big/1.webp'},
+    {id:'p677140342',wb:'677140342',name:'Игрушечная металлическая посуда с фруктами и овощами',photo:'https://basket-33.wbbasket.ru/vol6771/part677140/677140342/images/big/1.webp',price:31.0},
+    {id:'p783968430',wb:'783968430',name:'Развивающие мягкие игрушки пирамида сортер кубики малышу',photo:'https://basket-36.wbbasket.ru/vol7839/part783968/783968430/images/big/1.webp',price:39.7},
+    {id:'p783968431',wb:'783968431',name:'Развивающий бизиборд 4в1 кубик сортер пирамида малышу',photo:'https://basket-36.wbbasket.ru/vol7839/part783968/783968431/images/big/1.webp',price:46.2},
+    {id:'p783970568',wb:'783970568',name:'Мягкие большие силиконовые шарики кубики малышу',photo:'https://basket-36.wbbasket.ru/vol7839/part783970/783970568/images/big/1.webp',price:26.0},
+    {id:'p877152767',wb:'877152767',name:'Конструктор пиратский остров бухта с лодкой и сокровищами',photo:'https://basket-39.wbbasket.ru/vol8771/part877152/877152767/images/big/1.webp'},
+    {id:'p415796302',wb:'415796302',name:'Мягкая игрушка плюшевая ночник овечка для девочек',photo:'https://basket-24.wbbasket.ru/vol4157/part415796/415796302/images/big/1.webp',price:30.2},
+    {id:'p890356416',wb:'890356416',name:'Бизиборд сортер музыкальный с пианино развивающий светящийся',photo:'https://basket-39.wbbasket.ru/vol8903/part890356/890356416/images/big/1.webp'},
+    {id:'p890356418',wb:'890356418',name:'Погремушка на присоске с прорезывателем для малышей бизиборд',photo:'https://basket-39.wbbasket.ru/vol8903/part890356/890356418/images/big/1.webp'},
+    {id:'p890356419',wb:'890356419',name:'Погремушка детская Рыбка на присоске с грызунком',photo:'https://basket-39.wbbasket.ru/vol8903/part890356/890356419/images/big/1.webp'},
+    {id:'p758102013',wb:'758102013',name:'Конструктор корабль уточками и животными для ванной',photo:'https://basket-35.wbbasket.ru/vol7581/part758102/758102013/images/big/1.webp',price:40.6},
+    {id:'p758108753',wb:'758108753',name:'Конструктор для малышей большой с животными',photo:'https://basket-35.wbbasket.ru/vol7581/part758108/758108753/images/big/1.webp'},
+    {id:'p758132188',wb:'758132188',name:'Автотрек крупный конструктор с машинками для малышей',photo:'https://basket-35.wbbasket.ru/vol7581/part758132/758132188/images/big/1.webp',price:36.3},
+    {id:'p758115933',wb:'758115933',name:'Игрушки пальчиковые для ванной зверята в лодке',photo:'https://basket-35.wbbasket.ru/vol7581/part758115/758115933/images/big/1.webp'},
+    {id:'p877158122',wb:'877158122',name:'Спиннеры на присоске для ванной малышей набор',photo:'https://basket-39.wbbasket.ru/vol8771/part877158/877158122/images/big/1.webp'},
+    {id:'p160480520',wb:'160480520',name:'Набор игрушек для ванной на присосках купания малышей',photo:'https://basket-11.wbbasket.ru/vol1604/part160480/160480520/images/big/1.webp'},
+    {id:'p160484794',wb:'160484794',name:'Заводная рыбка акула для купания в ванной на батарейках',photo:'https://basket-11.wbbasket.ru/vol1604/part160484/160484794/images/big/1.webp',price:10.2},
+    {id:'p207077618',wb:'207077618',name:'Игрушка набор уточек для ванной на присосках',photo:'https://basket-14.wbbasket.ru/vol2070/part207077/207077618/images/big/1.webp',price:22.3},
+    {id:'p371992262',wb:'371992262',name:'Заводная рыбка клоун на батарейке для ванны',photo:'https://basket-22.wbbasket.ru/vol3719/part371992/371992262/images/big/1.webp'},
+    {id:'p411175983',wb:'411175983',name:'Заводные игрушки для ванны 4шт в наборе',photo:'https://basket-23.wbbasket.ru/vol4111/part411175/411175983/images/big/1.webp',price:8.8},
+    {id:'p415751271',wb:'415751271',name:'Набор корзин для хранения игрушек и вещей 2шт',photo:'https://basket-24.wbbasket.ru/vol4157/part415751/415751271/images/big/1.webp',price:12.3},
+    {id:'p502522584',wb:'502522584',name:'Подарочные пакетики для сладостей в детский сад',photo:'https://basket-27.wbbasket.ru/vol5025/part502522/502522584/images/big/1.webp'},
+    {id:'p504156920',wb:'504156920',name:'Подарочные пакетики для сладостей в детский сад',photo:'https://basket-27.wbbasket.ru/vol5041/part504156/504156920/images/big/1.webp'},
+    {id:'p504171392',wb:'504171392',name:'Подарочные пакетики для сладостей в детский сад',photo:'https://basket-27.wbbasket.ru/vol5041/part504171/504171392/images/big/1.webp'},
+    {id:'p545148008',wb:'545148008',name:'Подарочные пакетики для сладостей в детский сад',photo:'https://basket-28.wbbasket.ru/vol5451/part545148/545148008/images/big/1.webp'},
+    {id:'p16062298',wb:'16062298',name:'Конструктор игольчатый мягкий крупный для малышей',photo:'https://basket-02.wbbasket.ru/vol160/part16062/16062298/images/big/1.webp',price:27.7},
+    {id:'p366623186',wb:'366623186',name:'Мягкий конструктор для малышей крупные детали',photo:'https://basket-21.wbbasket.ru/vol3666/part366623/366623186/images/big/1.webp',price:18.6},
+    {id:'p207076111',wb:'207076111',name:'Мягкий конструктор для малышей крупные детали в рюкзаке',photo:'https://basket-14.wbbasket.ru/vol2070/part207076/207076111/images/big/1.webp',price:32.8},
+    {id:'p207086296',wb:'207086296',name:'Прорезыватель грызунок для новорожденных малышей 0+',photo:'https://basket-14.wbbasket.ru/vol2070/part207086/207086296/images/big/1.webp'},
+    {id:'p207086297',wb:'207086297',name:'Бизиборд телефон прорезыватель для зубов погремушка малышу',photo:'https://basket-14.wbbasket.ru/vol2070/part207086/207086297/images/big/1.webp',price:12.3},
+  ],
+  vehicles: [
+    {id:'p846397846',wb:'846397846',name:'Маленькая лодка катер на радиоуправлении',photo:'https://basket-38.wbbasket.ru/vol8463/part846397/846397846/images/big/1.webp'},
+    {id:'p846397847',wb:'846397847',name:'Трюковая машинка на пульте управления перевертыш',photo:'https://basket-38.wbbasket.ru/vol8463/part846397/846397847/images/big/1.webp'},
+    {id:'p877156099',wb:'877156099',name:'Автотрек с трассой и машинками катапульта многоуровневый',photo:'https://basket-39.wbbasket.ru/vol8771/part877156/877156099/images/big/1.webp'},
+    {id:'p496422555',wb:'496422555',name:'Большая машинка на радиоуправлении внедорожник скоростная',photo:'https://basket-27.wbbasket.ru/vol4964/part496422/496422555/images/big/1.webp',price:240.0},
+    {id:'p534368513',wb:'534368513',name:'Машинка ламборгини карманная на пульте управления с боксом',photo:'https://basket-28.wbbasket.ru/vol5343/part534368/534368513/images/big/1.webp',price:25.5},
+    {id:'p695407188',wb:'695407188',name:'Карманная машинка на пульте управления монстр трак',photo:'https://basket-33.wbbasket.ru/vol6954/part695407/695407188/images/big/1.webp',price:27.3},
+    {id:'p338485315',wb:'338485315',name:'Машинка джип на радиоуправлении с пультом управления большая',photo:'https://basket-20.wbbasket.ru/vol3384/part338485/338485315/images/big/1.webp'},
+    {id:'p338506361',wb:'338506361',name:'Машинка высокоскоростная на пульте управления',photo:'https://basket-20.wbbasket.ru/vol3385/part338506/338506361/images/big/1.webp',price:275.9},
+    {id:'p366659845',wb:'366659845',name:'Катер на аккумуляторе с пультом управления',photo:'https://basket-21.wbbasket.ru/vol3666/part366659/366659845/images/big/1.webp',price:32.4},
+    {id:'p371983282',wb:'371983282',name:'Карманная машинка на пульте управления маленькая с телефона',photo:'https://basket-22.wbbasket.ru/vol3719/part371983/371983282/images/big/1.webp',price:24.0},
+    {id:'p150610547',wb:'150610547',name:'Машинка на пульте управления с радиоуправлением',photo:'https://basket-10.wbbasket.ru/vol1506/part150610/150610547/images/big/1.webp',price:28.0},
+    {id:'p159686323',wb:'159686323',name:'Автотрек большой с катапультой 8 металлических машинок',photo:'https://basket-10.wbbasket.ru/vol1596/part159686/159686323/images/big/1.webp',price:39.8},
+    {id:'p303306021',wb:'303306021',name:'Радиоуправляемая машинка на пульте для дрифта быстрая',photo:'https://basket-18.wbbasket.ru/vol3033/part303306/303306021/images/big/1.webp'},
+    {id:'p366639581',wb:'366639581',name:'Железная дорога с электропоездом и мостами',photo:'https://basket-21.wbbasket.ru/vol3666/part366639/366639581/images/big/1.webp',price:35.4},
+    {id:'p366639582',wb:'366639582',name:'Игровая железная дорога с электропоездом и вагоном',photo:'https://basket-21.wbbasket.ru/vol3666/part366639/366639582/images/big/1.webp'},
+    {id:'p371980424',wb:'371980424',name:'Детская железная дорога с поездом на батарейках',photo:'https://basket-22.wbbasket.ru/vol3719/part371980/371980424/images/big/1.webp'},
+    {id:'p371980425',wb:'371980425',name:'Детская военная железная дорога с поездом на батарейках',photo:'https://basket-22.wbbasket.ru/vol3719/part371980/371980425/images/big/1.webp'},
+    {id:'p468751609',wb:'468751609',name:'Детская железная дорога с динозаврами на батарейках',photo:'https://basket-26.wbbasket.ru/vol4687/part468751/468751609/images/big/1.webp',price:27.0},
+  ],
+  robots: [
+    {id:'p16471980',wb:'16471980',name:'Робот трансформер пожарный мотоцикл 2в1',photo:'https://basket-02.wbbasket.ru/vol164/part16471/16471980/images/big/1.webp'},
+    {id:'p16471981',wb:'16471981',name:'Робот трансформер пожарный Вертолет 2в1',photo:'https://basket-02.wbbasket.ru/vol164/part16471/16471981/images/big/1.webp'},
+    {id:'p16472033',wb:'16472033',name:'Робот трансформер автобот игрушка бамблби жук',photo:'https://basket-02.wbbasket.ru/vol164/part16472/16472033/images/big/1.webp',price:30.0},
+    {id:'p16472035',wb:'16472035',name:'Робот трансформер автобот Хаунд грузовик 2 в 1 Hound',photo:'https://basket-02.wbbasket.ru/vol164/part16472/16472035/images/big/1.webp',price:26.2},
+    {id:'p36015336',wb:'36015336',name:'Трансформер автобот робот бамблби камаро',photo:'https://basket-03.wbbasket.ru/vol360/part36015/36015336/images/big/1.webp'},
+    {id:'p36015858',wb:'36015858',name:'Робот автобот тягач трансформер Оптимус Прайм 2в1',photo:'https://basket-03.wbbasket.ru/vol360/part36015/36015858/images/big/1.webp',price:33.6},
+    {id:'p81329861',wb:'81329861',name:'Трансформер робот тягач Оптимус подарок мальчику',photo:'https://basket-05.wbbasket.ru/vol813/part81329/81329861/images/big/1.webp'},
+    {id:'p81331482',wb:'81331482',name:'Робот трансформер автобот оптимус и бамблби набор',photo:'https://basket-05.wbbasket.ru/vol813/part81331/81331482/images/big/1.webp'},
+    {id:'p111228462',wb:'111228462',name:'Робот трансформер металлический полицейская машина',photo:'https://basket-07.wbbasket.ru/vol1112/part111228/111228462/images/big/1.webp'},
+    {id:'p111228750',wb:'111228750',name:'Робот трансформер металлический полиция вертолет',photo:'https://basket-07.wbbasket.ru/vol1112/part111228/111228750/images/big/1.webp'},
+    {id:'p111229025',wb:'111229025',name:'Робот трансформер металлическим полицейская лодка',photo:'https://basket-07.wbbasket.ru/vol1112/part111229/111229025/images/big/1.webp'},
+    {id:'p111236986',wb:'111236986',name:'Робот трансформер металлический полиция джип',photo:'https://basket-07.wbbasket.ru/vol1112/part111236/111236986/images/big/1.webp'},
+    {id:'p36016276',wb:'36016276',name:'Робот Хаунд хаммер трансформер 2 в 1 подарок для мальчика',photo:'https://basket-03.wbbasket.ru/vol360/part36016/36016276/images/big/1.webp'},
+    {id:'p156202640',wb:'156202640',name:'Трансформер робот динозавр Гримлок 2 в 1',photo:'https://basket-10.wbbasket.ru/vol1562/part156202/156202640/images/big/1.webp',price:20.3},
+    {id:'p156203935',wb:'156203935',name:'Робот трансформер динозавр трицератопс Слак',photo:'https://basket-10.wbbasket.ru/vol1562/part156203/156203935/images/big/1.webp',price:23.1},
+    {id:'p159683497',wb:'159683497',name:'Трансформер робот Оптимус Праймал 2в1 с оружием',photo:'https://basket-10.wbbasket.ru/vol1596/part159683/159683497/images/big/1.webp',price:19.3},
+    {id:'p163667090',wb:'163667090',name:'Робот трансформер Оптимус Праймал Max',photo:'https://basket-11.wbbasket.ru/vol1636/part163667/163667090/images/big/1.webp'},
+    {id:'p177969482',wb:'177969482',name:'Трансформер автобот робот бамблби машинка камаро',photo:'https://basket-12.wbbasket.ru/vol1779/part177969/177969482/images/big/1.webp',price:19.3},
+    {id:'p177970528',wb:'177970528',name:'Трансформер автобот грузовик робот оптимус прайм 2в1',photo:'https://basket-12.wbbasket.ru/vol1779/part177970/177970528/images/big/1.webp',price:22.4},
+    {id:'p200796986',wb:'200796986',name:'Робот трансформер игрушка бамблби камаро большой',photo:'https://basket-13.wbbasket.ru/vol2007/part200796/200796986/images/big/1.webp',price:36.2},
+    {id:'p207084025',wb:'207084025',name:'Робот трансформер терроркон Баттлтрап',photo:'https://basket-14.wbbasket.ru/vol2070/part207084/207084025/images/big/1.webp',price:35.5},
+    {id:'p207085537',wb:'207085537',name:'Робот трансформер подъемный кран строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085537/images/big/1.webp',price:12.8},
+    {id:'p207085538',wb:'207085538',name:'Робот трансформер бетономешалка строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085538/images/big/1.webp',price:12.5},
+    {id:'p207085539',wb:'207085539',name:'Робот трансформер экскаватор строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085539/images/big/1.webp',price:10.0},
+    {id:'p207085540',wb:'207085540',name:'Робот трансформер бульдозер строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085540/images/big/1.webp',price:12.8},
+    {id:'p207085541',wb:'207085541',name:'Робот трансформер самосвал грузовик строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085541/images/big/1.webp',price:10.5},
+    {id:'p207085542',wb:'207085542',name:'Робот трансформер погрузчик строительная техника',photo:'https://basket-14.wbbasket.ru/vol2070/part207085/207085542/images/big/1.webp',price:10.0},
+    {id:'p211665983',wb:'211665983',name:'Робот трансформер Рэтчэт хаммер 2 в 1 подарок для мальчика',photo:'https://basket-14.wbbasket.ru/vol2116/part211665/211665983/images/big/1.webp',price:11.1},
+    {id:'p211665984',wb:'211665984',name:'Робот трансформер хотшот хаммер 2 в 1 автобот',photo:'https://basket-14.wbbasket.ru/vol2116/part211665/211665984/images/big/1.webp',price:13.4},
+    {id:'p238621390',wb:'238621390',name:'Большой робот автобот трансформер машинка бамблби Max 2 в 1',photo:'https://basket-15.wbbasket.ru/vol2386/part238621/238621390/images/big/1.webp'},
+    {id:'p240144261',wb:'240144261',name:'Робот автобот трансформер для мальчика порш Мираж',photo:'https://basket-15.wbbasket.ru/vol2401/part240144/240144261/images/big/1.webp',price:32.7},
+    {id:'p240144548',wb:'240144548',name:'Робот трансформер Тайрон машина чайка для мальчика',photo:'https://basket-15.wbbasket.ru/vol2401/part240144/240144548/images/big/1.webp',price:25.6},
+    {id:'p240664748',wb:'240664748',name:'Роботы техноботы трансформеры строительная техника 6в1',photo:'https://basket-16.wbbasket.ru/vol2406/part240664/240664748/images/big/1.webp',price:64.2},
+    {id:'p240668162',wb:'240668162',name:'Робот трансформер птица для мальчика Аиразор',photo:'https://basket-16.wbbasket.ru/vol2406/part240668/240668162/images/big/1.webp'},
+    {id:'p256594408',wb:'256594408',name:'Большой робот автобот трансформер Оптимус прайм MAX',photo:'https://basket-16.wbbasket.ru/vol2565/part256594/256594408/images/big/1.webp',price:99.7},
+    {id:'p256600282',wb:'256600282',name:'Трансформер робот грузовик зил игрушка машинка для мальчика',photo:'https://basket-16.wbbasket.ru/vol2566/part256600/256600282/images/big/1.webp',price:28.7},
+    {id:'p256600393',wb:'256600393',name:'Робот трансформер зверобот птица Эйрэйзор Максимал',photo:'https://basket-16.wbbasket.ru/vol2566/part256600/256600393/images/big/1.webp',price:24.2},
+    {id:'p256600524',wb:'256600524',name:'Робот трансформер носорог Ринокс зверобот',photo:'https://basket-16.wbbasket.ru/vol2566/part256600/256600524/images/big/1.webp',price:26.9},
+    {id:'p256600665',wb:'256600665',name:'Робот трансформер Оптимус Праймал горилла звероботы',photo:'https://basket-16.wbbasket.ru/vol2566/part256600/256600665/images/big/1.webp',price:25.4},
+    {id:'p270939308',wb:'270939308',name:'Роботы трансформеры диноботы динозавры 2в1',photo:'https://basket-17.wbbasket.ru/vol2709/part270939/270939308/images/big/1.webp',price:18.0},
+    {id:'p275019474',wb:'275019474',name:'Робот трансформер гепард Читор зверобот',photo:'https://basket-17.wbbasket.ru/vol2750/part275019/275019474/images/big/1.webp',price:26.8},
+    {id:'p275019723',wb:'275019723',name:'Мегатрон трансформер робот десептикон танк',photo:'https://basket-17.wbbasket.ru/vol2750/part275019/275019723/images/big/1.webp',price:47.4},
+    {id:'p303304049',wb:'303304049',name:'Робот трансформер автобот грузовик оптимус прайм',photo:'https://basket-18.wbbasket.ru/vol3033/part303304/303304049/images/big/1.webp'},
+    {id:'p303304252',wb:'303304252',name:'Робот трансформер автобот машина бамблби для мальчика',photo:'https://basket-18.wbbasket.ru/vol3033/part303304/303304252/images/big/1.webp'},
+    {id:'p366631178',wb:'366631178',name:'Робот трансформер набор атоботов бамблби и оптимус',photo:'https://basket-21.wbbasket.ru/vol3666/part366631/366631178/images/big/1.webp',price:20.5},
+    {id:'p366631179',wb:'366631179',name:'Трансформер автобот робот бамблби машинка',photo:'https://basket-21.wbbasket.ru/vol3666/part366631/366631179/images/big/1.webp',price:10.6},
+    {id:'p366631180',wb:'366631180',name:'Робот трансформер детский автобот Оптимус Прайм',photo:'https://basket-21.wbbasket.ru/vol3666/part366631/366631180/images/big/1.webp',price:11.0},
+    {id:'p448992533',wb:'448992533',name:'Робот мегатрон трансформер начало десептикон',photo:'https://basket-25.wbbasket.ru/vol4489/part448992/448992533/images/big/1.webp',price:11.0},
+    {id:'p468753428',wb:'468753428',name:'Роботы трансформеры машинки 3 в 1 для малышей',photo:'https://basket-26.wbbasket.ru/vol4687/part468753/468753428/images/big/1.webp'},
+    {id:'p489541863',wb:'489541863',name:'Цифроботы развивающие трансформеры для малышей',photo:'https://basket-27.wbbasket.ru/vol4895/part489541/489541863/images/big/1.webp',price:28.6},
+    {id:'p489559687',wb:'489559687',name:'Сборная модель Оптимус прайм робот трансформер',photo:'https://basket-27.wbbasket.ru/vol4895/part489559/489559687/images/big/1.webp',price:14.6},
+    {id:'p489561590',wb:'489561590',name:'Фигурка трансформера бамблби робот конструктор',photo:'https://basket-27.wbbasket.ru/vol4895/part489561/489561590/images/big/1.webp',price:14.6},
+    {id:'p489562778',wb:'489562778',name:'Конструктор фигурка Скердж робот трансформер',photo:'https://basket-27.wbbasket.ru/vol4895/part489562/489562778/images/big/1.webp',price:14.6},
+    {id:'p489564182',wb:'489564182',name:'Сборная модель фигурки мираж робот конструктор',photo:'https://basket-27.wbbasket.ru/vol4895/part489564/489564182/images/big/1.webp',price:14.6},
+    {id:'p515417265',wb:'515417265',name:'Робот трансформер самолет старскрим десептикон',photo:'https://basket-27.wbbasket.ru/vol5154/part515417/515417265/images/big/1.webp',price:14.7},
+    {id:'p677151864',wb:'677151864',name:'Робот трансформер автобот оптимус прайм для мальчика',photo:'https://basket-33.wbbasket.ru/vol6771/part677151/677151864/images/big/1.webp',price:37.9},
+    {id:'p677152725',wb:'677152725',name:'Робот трансформер бамблби камаро автобот для мальчика',photo:'https://basket-33.wbbasket.ru/vol6771/part677152/677152725/images/big/1.webp',price:31.9},
+    {id:'p677154302',wb:'677154302',name:'Робот тарнсфоремр десептикон Скёрдж для мальчика',photo:'https://basket-33.wbbasket.ru/vol6771/part677154/677154302/images/big/1.webp',price:70.4},
+  ],
+};
+
+
+const CAT_META = {
+  edu:         {rom:'i.',  name:'Развивающие<br>и активные'},
+  constructors:{rom:'ii.', name:'Конструкторы'},
+  weapons:     {rom:'iii.',name:'Игрушечное<br>оружие'},
+  baby:        {rom:'iv.', name:'Для малышей'},
+  vehicles:    {rom:'v.',  name:'Машинки<br>и транспорт'},
+  robots:      {rom:'vi.', name:'Роботы<br>и трансформеры'},
+};
+
+const PAGE_SIZE = 16;
+const visible = {};
+const cart = {};
+
+// --- CATEGORY GRID ---
+function renderCatGrid(){
+  const el = document.getElementById('catGrid');
+  el.innerHTML = Object.entries(CAT_META).map(([k,m])=>`
+    <a href="#${k}">
+      <span class="nm">${m.name}</span>
+      <span class="ct">${products[k].length} позиций</span>
+      <span class="ar">→ перейти</span>
+    </a>`).join('');
+}
+
+// --- PRODUCT CARDS ---
+function rub(n){return n.toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' р.';}
+function tryAltBasket(img){
+  const m = img.src.match(/basket-(\d+)/);
+  if (!m){ failImg(img); return; }
+  const current = parseInt(img.dataset.basket || m[1], 10);
+  const next = current + 1;
+  if (next > 40){ failImg(img); return; }
+  img.dataset.basket = next;
+  img.src = img.src.replace(/basket-\d+/, 'basket-' + String(next).padStart(2,'0'));
+}
+function failImg(img){
+  img.onerror = null;
+  img.style.display = 'none';
+  if (!img.parentElement.querySelector('.ph')){
+    const ph = document.createElement('div');
+    ph.className = 'ph';
+    ph.textContent = 'фото скоро';
+    img.parentElement.appendChild(ph);
+  }
+}
+function cardHtml(p){
+  return `<article class="card">
+    <div class="img">
+      <img src="${p.photo}" alt="${p.name.replace(/"/g,'&quot;')}" loading="lazy" onerror="tryAltBasket(this)">
+    </div>
+    <div class="body">
+      <div class="name">${p.name}</div>
+      <div class="row">
+        <span class="price${p.price ? '' : ' muted'}">${p.price ? rub(p.price) : 'цена по запросу'}</span>
+        <button class="add" data-id="${p.id}">+ в корзину</button>
+      </div>
+    </div>
+  </article>`;
+}
+function renderCategory(k){
+  const list = getSorted(k);
+  const n = visible[k];
+  const slice = list.slice(0, n);
+  document.getElementById('grid-'+k).innerHTML = slice.map(cardHtml).join('');
+  document.getElementById('cnt-'+k).textContent = `${list.length} позиций · показано ${slice.length}`;
+  const mw = document.getElementById('more-wrap-'+k);
+  if (n < list.length){
+    const rest = list.length - n;
+    mw.innerHTML = `<button class="more-btn" data-more="${k}">Показать ещё ${Math.min(rest, PAGE_SIZE)} из ${rest}</button>`;
+  } else {
+    mw.innerHTML = list.length > PAGE_SIZE ? `<button class="more-btn" data-collapse="${k}">Свернуть</button>` : '';
+  }
+}
+
+// --- SORTING ---
+const sortMode = {};
+for (const k of Object.keys(CAT_META)) sortMode[k] = 'popular';
+sortMode.all = 'popular';
+
+// flat list of all products across categories (in section display order)
+const allProducts = [];
+for (const k of Object.keys(CAT_META)) allProducts.push(...products[k]);
+
+function getSorted(k){
+  const list = k === 'all' ? allProducts : products[k];
+  if (sortMode[k] === 'price'){
+    return [...list].sort((a,b)=>{
+      const ap = a.price == null ? Infinity : a.price;
+      const bp = b.price == null ? Infinity : b.price;
+      return ap - bp;
+    });
+  }
+  return list; // popular = original order
+}
+
+function renderAllToys(){
+  const list = getSorted('all');
+  document.getElementById('grid-all').innerHTML = list.map(cardHtml).join('');
+  document.getElementById('cnt-all').textContent = `${list.length} позиций`;
+}
+
+function renderAll(){
+  for (const k of Object.keys(CAT_META)){
+    visible[k] = Math.min(PAGE_SIZE, products[k].length);
+    renderCategory(k);
+  }
+}
+
+// --- CART ---
+function findProd(id){for(const k in products){const p=products[k].find(x=>x.id===id);if(p)return p}}
+function totalItems(){return Object.values(cart).reduce((s,n)=>s+n,0)}
+function refreshCart(){
+  const ids = Object.keys(cart);
+  document.getElementById('dot').textContent = totalItems();
+  const c = document.getElementById('cartItems');
+  if (!ids.length){
+    c.innerHTML = '<div class="cart-empty">Корзина пуста.<br>Добавьте позиции из каталога ✨</div>';
+    document.getElementById('total').textContent = '0,0 р.';
+    return;
+  }
+  let sum = 0, noPriceCount = 0;
+  c.innerHTML = ids.map(id=>{
+    const p = findProd(id); if (!p) return '';
+    const q = cart[id];
+    let priceLine;
+    if (p.price){
+      sum += p.price * q;
+      priceLine = `${rub(p.price)} × ${q} = ${rub(p.price * q)}`;
+    } else {
+      noPriceCount += q;
+      priceLine = `цена по запросу × ${q}`;
+    }
+    return `<div class="cart-item">
+      <div class="thumb"><img src="${p.photo}" alt="" loading="lazy" onerror="tryAltBasket(this)"></div>
+      <div>
+        <div class="nm">${p.name}</div>
+        <div class="wb">арт. ${p.wb} · ${priceLine}</div>
+      </div>
+      <div class="qty">
+        <button class="qbtn" data-dec="${id}">−</button>
+        <span class="qn">${q}</span>
+        <button class="qbtn" data-inc="${id}">+</button>
+        <button class="rm" data-rm="${id}">удалить</button>
+      </div>
+    </div>`;
+  }).join('');
+  let totalText = rub(sum);
+  if (noPriceCount > 0) totalText += ` + ${noPriceCount} поз. по запросу`;
+  document.getElementById('total').textContent = totalText;
+}
+
+// --- CHECKOUT (Telegram message draft) ---
+function buildOrderText(){
+  const lines = ['Здравствуйте! Хочу оформить заявку BAZUMI:', ''];
+  let i = 1, sum = 0, byRequest = 0;
+  for (const id in cart){
+    const p = findProd(id); if (!p) continue;
+    const q = cart[id];
+    if (p.price){
+      sum += p.price * q;
+      lines.push(`${i}. ${p.name} (арт. ${p.wb}) — ${q} шт. × ${rub(p.price)} = ${rub(p.price * q)}`);
+    } else {
+      byRequest++;
+      lines.push(`${i}. ${p.name} (арт. ${p.wb}) — ${q} шт. (цена по запросу)`);
+    }
+    i++;
+  }
+  lines.push('');
+  lines.push(`Итого: ${rub(sum)}`);
+  if (byRequest) lines.push(`Плюс ${byRequest} поз. без цены — прошу уточнить.`);
+  return lines.join('\n');
+}
+
+// --- EVENTS ---
+document.addEventListener('click', e=>{
+  const add = e.target.closest('.add');
+  if (add){
+    const id = add.dataset.id;
+    cart[id] = (cart[id] || 0) + 1;
+    add.textContent = '✓ добавлено';
+    add.classList.add('ok');
+    setTimeout(()=>{add.textContent='+ в корзину';add.classList.remove('ok')}, 1100);
+    refreshCart();
+    return;
+  }
+  const sortBtn = e.target.closest('.sort-btn');
+  if (sortBtn){
+    const toggle = sortBtn.closest('.sort-toggle');
+    const k = toggle.dataset.cat;
+    const mode = sortBtn.dataset.sort;
+    if (sortMode[k] === mode) return;
+    sortMode[k] = mode;
+    toggle.querySelectorAll('.sort-btn').forEach(b=>b.classList.toggle('is-active', b===sortBtn));
+    if (k === 'all'){
+      renderAllToys();
+    } else {
+      visible[k] = Math.min(PAGE_SIZE, products[k].length);
+      renderCategory(k);
+    }
+    return;
+  }
+  const more = e.target.closest('[data-more]');
+  if (more){
+    const k = more.dataset.more;
+    visible[k] = Math.min(visible[k] + PAGE_SIZE, products[k].length);
+    renderCategory(k);
+    return;
+  }
+  const coll = e.target.closest('[data-collapse]');
+  if (coll){
+    const k = coll.dataset.collapse;
+    visible[k] = PAGE_SIZE;
+    renderCategory(k);
+    document.getElementById(k).scrollIntoView({behavior:'smooth'});
+    return;
+  }
+  const inc = e.target.closest('[data-inc]'); if (inc){cart[inc.dataset.inc]++;refreshCart();return}
+  const dec = e.target.closest('[data-dec]'); if (dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];refreshCart();return}
+  const rm = e.target.closest('[data-rm]'); if (rm){delete cart[rm.dataset.rm];refreshCart();return}
+});
+
+document.getElementById('checkout').onclick = ()=>{
+  if (!totalItems()){alert('Сначала добавьте товары в корзину');return}
+  // ВАЖНО: замените 'YOUR_USERNAME' на свой telegram username (без @)
+  const txt = encodeURIComponent(buildOrderText());
+  const TG_USERNAME = 'YOUR_USERNAME'; // ← заменить
+  window.open(`https://t.me/${TG_USERNAME}?text=${txt}`, '_blank');
+};
+document.getElementById('footTg').onclick = e=>{
+  e.preventDefault();
+  window.open('https://t.me/YOUR_USERNAME', '_blank');
+};
+
+const cartEl = document.getElementById('cart'), bd = document.getElementById('bd');
+document.getElementById('openCart').onclick = ()=>{cartEl.classList.add('open');bd.classList.add('show')};
+document.getElementById('closeCart').onclick = ()=>{cartEl.classList.remove('open');bd.classList.remove('show')};
+bd.onclick = ()=>{cartEl.classList.remove('open');bd.classList.remove('show')};
+document.getElementById('menuBtn').onclick = ()=>document.getElementById('catNav').classList.toggle('open');
+document.querySelectorAll('nav.cat-nav a').forEach(a=>a.onclick=()=>document.getElementById('catNav').classList.remove('open'));
+
+renderCatGrid();
+renderAll();
+renderAllToys();
+refreshCart();
+</script>
+</body>
+</html>
