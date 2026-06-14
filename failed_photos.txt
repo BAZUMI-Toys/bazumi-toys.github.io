@@ -1,0 +1,20 @@
+784073384	<urlopen error [Errno 11002] getaddrinfo failed>
+784070994	<urlopen error [Errno 11002] getaddrinfo failed>
+785885994	<urlopen error [Errno 11002] getaddrinfo failed>
+788522562	<urlopen error [Errno 11002] getaddrinfo failed>
+788538793	<urlopen error [Errno 11002] getaddrinfo failed>
+788538794	<urlopen error [Errno 11002] getaddrinfo failed>
+411186575	<urlopen error [Errno 11002] getaddrinfo failed>
+697259046	<urlopen error [Errno 11002] getaddrinfo failed>
+814554535	<urlopen error [Errno 11002] getaddrinfo failed>
+890330650	<urlopen error _ssl.c:1063: The handshake operation timed out>
+890344840	<urlopen error _ssl.c:1063: The handshake operation timed out>
+411199026	<urlopen error [Errno 11002] getaddrinfo failed>
+496421739	<urlopen error [Errno 11002] getaddrinfo failed>
+526212185	<urlopen error [Errno 11002] getaddrinfo failed>
+334593676	<urlopen error _ssl.c:1063: The handshake operation timed out>
+411180653	<urlopen error [Errno 11002] getaddrinfo failed>
+207077279	<urlopen error [Errno 11002] getaddrinfo failed>
+207081334	<urlopen error [Errno 11002] getaddrinfo failed>
+207081335	<urlopen error [Errno 11002] getaddrinfo failed>
+160485380	<urlopen error [Errno 11002] getaddrinfo failed>
